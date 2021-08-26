@@ -44,20 +44,27 @@ For detailed documentation on each step to achieve this End to End pipline, ople
 
 ## Software and Tools
 
-- MVC - Flask 
+<!-- ALL-TOPICS-LIST:START -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<center>
+<table>
+  <tr>
+    <td align="center"><a href="#jenkins"><img src="img/logos/Jenkins_logo.svg.png" width="85px;" height="85px;" alt="Jenkins"/><br /><b>Jenkins</b></a></td>
+    <td align="center"><a href="#git"><img src="img/logos/1280px-Git-logo.svg.png" width="80px;" height="75px;" alt="Git"/><br /><b>Git</b></a></td>
+    <td align="center"><a href="#cloudwatch"><img src="img/logos/aws-cloudwatch-logo-png-transparent.png" width="75px;" height="75px;" alt="cloudwatch"/><br /><b>cloudwatch</b></a></td>
 
-- Jenkins 
+  </tr>
+  <tr>
+    <td align="center"><a href="#Google app scripts"><img src="img/logos/google-apps-script-logo-BDEAA5E2DF-seeklogo.com.png" width="75px;" height="75px;" alt="coding"/><br /><b>Google App script</b></a></td>
+    <td align="center"><a href="#python"><img src="img/logos/1024px-Python-logo-notext.svg.png" width="80px;" height="75px;" alt="Python"/><br /><b>Python</b></a></td>
+    <td align="center"><a href="#kubernetes"><img src="img/logos/1200px-Kubernetes_logo_without_workmark.svg.png" width="75px;" height="75px;" alt="kubernetes"/><br /><b>Kubernetes</b></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="#docker"><img src="img/logos/docker_logo.png" width="80x;" height="75px;" alt="Docker"/><br /><b>Docker</b></a></td>
+    <td align="center"><a href="#flask"><img src="img/logos/flask-logo.png" width="75x;" height="75px;" alt="Flask"/><br /><b>Flask</b></a></td>
+    <td align="center"><a href="#gatling"><img src="img/logos/gatling.png" width="70px;" height="75px;" alt="Gatling"/><br /><b>Gatling</b></a></td>
+  </tr>
 
-- Docker
-
-- AWS - EC2, S3 
-
-- Google app scripts
-
-- Kubernetes
-
-- CloudWatch
-
-## Running the Application
 
 
