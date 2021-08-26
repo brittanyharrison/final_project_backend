@@ -1,12 +1,23 @@
 # Engineering 89: Final Project 
 ![logo](img/job_centre_logo.png)
+
 ## Introduction 
 
-This repository details the processes required to setup and run the job jobcentre++ application. 
+This repository details the processes required to setup and run the [jobcentre++ web application](https://github.com/engineering89-final-project/jcpp). 
 
 ## Project Scope  
 ![img](img/ci_cd_diagram.png)
 
+The aim of this project is to provide a End to End automation pipeline for the jobcentre++ web application. This included:
+
+- Test Driven Development(TDD) for the app
+- Continuous Integration using Jenkins
+- Continuous Delivery and Deployment with AWS EC2 
+- Containerisation and Deployment with Docker 
+- Data Persistency using S3 buckets
+- Cloud Monitoring with CloudWatch
+
+For detailed documentation on each step to achieve this End to End pipline, oplease refer to the wiki of this repository.  
 
 ## Team members:
 
