@@ -17,7 +17,7 @@ The aim of this project is to provide a End to End automation pipeline for the j
 - Data Persistency using S3 buckets
 - Cloud Monitoring with CloudWatch
 
-For detailed documentation on each step to achieve this End to End pipline, oplease refer to the wiki of this repository.  
+For detailed documentation on each step to achieve this End to End pipline, oplease refer to the [wiki](https://github.com/brittanyharrison/final_project_backend/wiki) of this repository.  
 
 ## Team members:
 
