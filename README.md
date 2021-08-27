@@ -66,5 +66,86 @@ For detailed documentation on each step to achieve this End to End pipline, ople
     <td align="center"><a href="#gatling"><img src="img/logos/gatling.png" width="70px;" height="75px;" alt="Gatling"/><br /><b>Gatling</b></a></td>
   </tr>
 
+# Jenkins 
+Jenkins is an open source automation server which enables developers around the world to reliably build, test, and deploy their software.
+
+### Step 1: Jenkins Installation
+
+
+1. Install java dependencies:
+
+```shell
+sudo apt install openjdk-11-jdk -y
+```
+
+2. Install jenkins:
+
+```shell
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > \
+    /etc/apt/sources.list.d/jenkins.list'
+sudo apt-get update
+sudo apt-get install jenkins
+```
+
+3. Check the status of Installation:
+```shell
+sudo systemctl status jenkins
+```
+### Jenkin Plugin Prerequisites 
+- Docker 
+-...
+
+
+## Job to pull from Dev Branch 
+
+### Step 1: Set up webhook on GitHub
+
+1. In your GitHub repository go to `Settings` and select `Webhooks` 
+
+2. Select ` Add webhook` 
+
+3. For the Payload URL you must put `http://<jenkins-url>/github-webhook/`
+
+4. For Content Type select application/json. 
+
+### Step 2: Build a Job to Pull from Dev branch  
+
+When there is a push to the dev branch, Jenkins will 
+
+- Discard old builds 
+    - Max # of build : 3
+- Github project
+    - Insert GitHub HTTPS repo link
+- Source Code Management
+    - Insert SSH Repo link
+    - Provide the SSH private Key which should be connected to your Github repo in Credentials
+    - Branches to build : */dev
+- Build Triggers
+    - Select GitHub hook trigger for GITScm polling
+- Build 
+    - Execute shell: test code 
+- Post-build Actions
+    - Select the Projects to build 
+    - Trigger only if build is stable
+
+### Step 2.5: Build a Job to merge into main
+- Discard old builds 
+    - Max # of build : 3
+- Git
+    - Repository URL
+    - Credentials
+    - Branches Specifer: */dev
+    - Branches Specifer: */main
+- Additional Behaviours: Merge before build
+    - Name of repo: origin
+    - Branch to merge to main
+- Post-build Actions
+    - Git Publisher
+        - Push Only if Build Successeds
+        - Merge Results
+
+### Step 3: Build an Docker Image 
+This job will pull the code from the main branch and build a docker image. The build will then push the images to the DockerHub repo. 
 
 
