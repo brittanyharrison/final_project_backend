@@ -148,7 +148,46 @@ When there is a push to the dev branch, Jenkins will
         - Push Only if Build Successeds
         - Merge Results
 
-### Step 3: Build an Docker Image 
-This job will pull the code from the main branch and build a docker image. The build will then push the images to the DockerHub repo. 
+### Step 3: Build a Docker Image 
+This job will pull the code from the main branch and build a docker image. The build will then push the images to the DockerHub repo.
+- Source code Management
+    - Git
+        - Repository URL (eng89-final-project
+        - Credentials (ssh key)
+        - Branches to build: */main
+- Build Triggers
+    - Build after other projects are built:
+         - Trigger only if build is stable (github_retriving_and_merging)
+- Build
+    - Build
+        - Repository Name: dockerid/ip
+        - Registry credentials (docker access key)
+
+```Jenkinsfile
+node {    
+      def app     
+      stage('Clone repository') {               
+             
+            checkout scm    
+      }     
+      stage('Build image') {         
+       
+            app = docker.build("eng89gang/project_docker_app")    
+       }     
+      stage('Test image') {           
+            app.inside {            
+             
+             sh 'echo "Tests passed"'        
+            }    
+        }     
+        stage('Push image') {
+            docker.withRegistry('', 'eng89gang') {
+               app.push("${env.BUILD_NUMBER}")            
+               app.push("latest") 
+            }    
+        }
+}
+```
+
 
 
