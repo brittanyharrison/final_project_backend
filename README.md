@@ -1,5 +1,5 @@
 # Engineering 89: Final Project 
-![logo](img/job_centre_logo.png)
+![logo](img/logos/job_centre_logo.png)
 
 ## Introduction 
 
